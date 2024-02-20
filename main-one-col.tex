@@ -1,0 +1,176 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\large\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+% controls spacing between elements
+%\usepackage[skip=10pt plus1pt, indent=40pt]{parskip}
+
+\begin{document}
+\name{Thomas Bidne}
+\tagline{Software Engineer}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{tbidne@gmail.com}
+  \homepage{https://tbidne.github.io}
+  \linkedin{tbidne}
+  \github{tbidne}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+\cvsection{Education}
+
+\cvevent{Bachelor of Science in Computer Science}{University of Maryland, College Park}{2009 -- 2013}{}
+\begin{itemize}
+\item Minor: Astronomy
+\item College Park Scholars Graduate
+\end{itemize}
+
+\cvsection{Experience}
+
+\cvevent{Senior Software Engineer}{Platonic.Systems}{November 2020 -- Present}{}
+
+\begin{itemize}
+    \item Implemented "smart-contracts" with a high emphasis on correctness in Haskell and Nix.
+    \item Designed and implemented a website for data visualization and machine learning in Python.
+    \item Improved a client's software's robustness by re-implementing fragile JavaScript APIs in Haskell.
+    \item Worked on a high-performance full-stack Haskell web application for supply-chain analysis.
+\end{itemize}
+
+\divider
+
+\cvevent{Senior DevSecOps Engineer}{BridgePhase}{March 2016 -- November 2020}{USCIS, Washington D.C.}
+
+\begin{itemize}
+    \item Full-stack web development for the Electronic Immigration System (ELIS) application, used by United States Citizenship and Immigration (USCIS) officers for handling applicant case flows.
+    \item Technologies used included Java+Spring, Angular+Javascript/Typescript, Oracle/Postgres, Docker+OpenShift, and CI/CD via Jenkins.
+    \item Maintained a Red Hat Enterprise Linux virtual machine for testing.
+    \item Participated in multiple "tiger teams" for developing cross-team solutions to shared problems.
+\end{itemize}
+
+\divider
+
+\cvevent{Software Engineer}{GBL Systems}{May 2013 -- February 2016}{NAS Pax River, Patuxent MD}
+\begin{itemize}
+  \item Worked on the C++ real-time distributed simulation Next Generation Threat System (NGTS) for the United States Navy.
+  \item Worked on network protocols and integrating NGTS with third-party software. This included designing/implementing APIs and travelling to customer sites to provide support.
+\end{itemize}
+
+\cvsection{Open Source}
+
+\begin{itemize}
+    \item I have contributed to opensource via my own applications / libraries and other popular libraries, especially in the Haskell community. This includes GHC, the primary Haskell compiler.
+    \item More information can be found on my \href{https://www.github.com/tbidne}{github} and \href{https://tbidne.github.io}{website}.
+\end{itemize}
+
+\cvsection{Skills}
+
+\cvtag{Distributed Systems}
+\cvtag{Networking}
+\cvtag{Full-stack development}
+\cvtag{Haskell, Nix}
+\cvtag{Nix}
+\cvtag{Java}
+\cvtag{C++}
+\cvtag{JavaScript/Typescript}
+\cvtag{Python}
+\cvtag{Ruby}
+\cvtag{Docker}
+\cvtag{OpenShift}
+
+\blfootnote{\textit{References available upon request}}
+
+\end{document}
