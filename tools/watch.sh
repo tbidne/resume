@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 read -r -d '' watched_files << EOM
-tex/altacv.cls
+tex/custom.cls
 tex/tbidne_resume.tex
 EOM
 

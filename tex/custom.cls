@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%
-% This is altacv.cls (v1.3.2, 17 May 2020) written by
+% This is a modified class based on altacv.cls, originally by
 % LianTze Lim (liantze@gmail.com).
 %
 %% It may be distributed and/or modified under the
@@ -11,14 +11,10 @@
 %% version 2003/12/01 or later.
 %%
 %%
-% Contributions:
-% - https://github.com/akreuzer Added ragged2e option (5 Nov 2018)
-% - https://github.com/stefanogermano Fixed bad boxes and undefined font shape (July 2018)
-% - https://github.com/foohyfooh Fixed blank spaces in \cvevent and bad link in README.md (June 2018)
 
 %%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{altacv}[2020/05/17 AltaCV v1.3.2, yet another alternative class for a resume/curriculum vitae.]
+\ProvidesClass{custom}[Modified AltaCV]
 
 %% v1.1: Optionally load academicons
 \newif\if@academicons
@@ -207,7 +203,6 @@
 \ExplSyntaxOff
 
 \newcommand{\name}[1]{\def\@name{#1}}
-%\newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 \NewInfoField{email}{\faAt}[mailto:]
 \NewInfoField{mailaddress}{\faEnvelope}
@@ -268,17 +263,6 @@
 
 \newcommand{\makecvheader}{%
   \begingroup
-    %\altacv@left@photos\hfill%
-    %\begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
-    %%\raggedright%
-    %%{\namefont\color{name}\MakeUppercase{\@name}\par}
-    %%\medskip
-    %{\taglinefont\color{tagline}\@tagline\par}
-    %%\medskip
-    %%{\personalinfofont\@personalinfo\par}
-    %\end{minipage}\hfill%
-    %\altacv@right@photos\par%
-
     \begin{centering}
       {\namefont\color{name}\MakeUppercase{\@name}\par}
       \medskip
