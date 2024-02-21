@@ -15,9 +15,9 @@
             src = ./.;
             buildInputs = [ pkgs.texlive.combined.scheme-full ];
             installPhase = ''
-              ${pkgs.texlive.combined.scheme-full}/bin/pdflatex $src/main-two-col.tex -halt-on-error
+              ${pkgs.texlive.combined.scheme-full}/bin/pdflatex $src/tbidne_resume.tex -halt-on-error
               mkdir -p $out
-              cp main-two-col.pdf $out/tbidne_resume.pdf
+              cp tbidne_resume.pdf $out
             '';
           };
 
