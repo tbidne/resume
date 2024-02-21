@@ -2,4 +2,8 @@
 
 mkdir -p build
 
-pdflatex -halt-on-error -output-directory build tbidne_resume.tex
+cd tex
+
+pdflatex -halt-on-error -output-directory ../build tbidne_resume.tex
+
+cd ../

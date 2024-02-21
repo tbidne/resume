@@ -15,17 +15,37 @@
             src = ./.;
             buildInputs = [ pkgs.texlive.combined.scheme-full ];
             installPhase = ''
-              ${pkgs.texlive.combined.scheme-full}/bin/pdflatex $src/tbidne_resume.tex -halt-on-error
+              cd tex
+              ${pkgs.texlive.combined.scheme-full}/bin/pdflatex tbidne_resume.tex -halt-on-error
+              cd ../
+
               mkdir -p $out
-              cp tbidne_resume.pdf $out
+              cp tex/tbidne_resume.pdf $out
+              echo $out
             '';
           };
 
           devShells.default = pkgs.mkShell {
             buildInputs = [
+              pkgs.entr
               pkgs.texlive.combined.scheme-full
             ];
           };
+
+          apps =
+            let
+              fmtShellApp = pkgs.writeShellApplication {
+                name = "format";
+                runtimeInputs = [ pkgs.nixpkgs-fmt ];
+                text = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt flake.nix";
+              };
+            in
+            {
+              format = {
+                type = "app";
+                program = "${fmtShellApp}/bin/${fmtShellApp.name}";
+              };
+            };
         };
       systems = [
         "x86_64-darwin"
