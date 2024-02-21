@@ -131,7 +131,8 @@
 \colorlet{subheading}{emphasis}
 \colorlet{body}{black!80!white}
 \colorlet{name}{heading}
-\colorlet{tagline}{accent}
+\definecolor{LightGray}{HTML}{bfbfbf}
+%\colorlet{tagline}{accent}
 \newcommand{\itemmarker}{{\small\textbullet}}
 \newcommand{\ratingmarker}{\faCircle}
 
@@ -206,7 +207,7 @@
 \ExplSyntaxOff
 
 \newcommand{\name}[1]{\def\@name{#1}}
-\newcommand{\tagline}[1]{\def\@tagline{#1}}
+%\newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 \NewInfoField{email}{\faAt}[mailto:]
 \NewInfoField{mailaddress}{\faEnvelope}
@@ -260,23 +261,30 @@
 \let\photo\photoR
 
 \newcommand{\namefont}{\Huge\bfseries}
-\newcommand{\taglinefont}{\large\bfseries}
+%\newcommand{\taglinefont}{\large\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
 \newcommand{\cvsectionfont}{\LARGE\bfseries}
 \newcommand{\cvsubsectionfont}{\large\bfseries}
 
 \newcommand{\makecvheader}{%
   \begingroup
-    \altacv@left@photos\hfill%
-    \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
-    \raggedright%
-    {\namefont\color{name}\MakeUppercase{\@name}\par}
-    \medskip
-    {\taglinefont\color{tagline}\@tagline\par}
-    \medskip
-    {\personalinfofont\@personalinfo\par}
-    \end{minipage}\hfill%
-    \altacv@right@photos\par%
+    %\altacv@left@photos\hfill%
+    %\begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
+    %%\raggedright%
+    %%{\namefont\color{name}\MakeUppercase{\@name}\par}
+    %%\medskip
+    %{\taglinefont\color{tagline}\@tagline\par}
+    %%\medskip
+    %%{\personalinfofont\@personalinfo\par}
+    %\end{minipage}\hfill%
+    %\altacv@right@photos\par%
+
+    \begin{centering}
+      {\namefont\color{name}\MakeUppercase{\@name}\par}
+      \medskip
+      {\personalinfofont\@personalinfo\par}
+    \end{centering}
+  \smallskip\normalsize
   \endgroup\medskip
 }
 
@@ -286,7 +294,7 @@
   \bigskip%
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
-  {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
+  {\color{LightGray}\rule{\linewidth}{0.5pt}\par}\medskip
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -294,9 +302,13 @@
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
 }
 
+\newcommand{\cvline}[0]{%
+  {\color{LightGray}\rule{\linewidth}{0.5pt}\par}\medskip
+}
+
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
+  {\large\color{emphasis}\textbf{#1}\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
   \textbf{\color{accent}#2}\par

@@ -85,7 +85,7 @@
 
 \begin{document}
 \name{Thomas Bidne}
-\tagline{Software Engineer}
+%\tagline{Software Engineer}
 
 \personalinfo{%
   % Not all of these are required!
@@ -93,35 +93,101 @@
   \homepage{tbidne.github.io}
   \linkedin{tbidne}
   \github{tbidne}
-  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
-  % \orcid{0000-0000-0000-0000}
-  %% You can add your own arbtrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
 }
 
 \makecvheader
+
+\cvline
+
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 % \AtBeginEnvironment{itemize}{\small}
 
+%\setlength{\columnsep}{4em}
+\setlength{\columnseprule}{0.5pt}
+\colseprulecolor{LightGray}
+
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
-
-\cvsection{About}
-
-I am a software engineer with 10 years of professional experience. I have been writing code since I was 14, for both academic and personal reasons. I write code most days, whether it is paid work, open-source contributions, or just plain experimentation for fun.
+\columnratio{0.4}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
 
+  \cvsection{About}
+
+  \begin{itemize}
+    \item Software engineer with over 10 years of professional experience.
+    \item Active opensource contributor, particularly in the Haskell and Nix communities.
+    \item Extensive experience working both in a team and as a solo developer.
+  \end{itemize}
+
+  \cvsection{Education}
+
+  \cvevent{B.Sc. in Computer Science}{University of Maryland, College Park}{2009 -- 2013}{}
+  \begin{itemize}
+  \item Minor: Astronomy
+  \item College Park Scholars Graduate
+  \end{itemize}
+
+  \cvsection{Programming Languages}
+  \cvtag{Haskell}
+  \cvtag{Java}
+  \cvtag{C\#}
+  \cvtag{JavaScript} \\
+  \cvtag{TypeScript}
+  \cvtag{PureScript}
+  \cvtag{Nix}
+  \cvtag{Python}
+  \cvtag{C++}
+  \cvtag{Ruby}
+
+  \cvsection{Web Frameworks}
+  \cvtag{Angular}
+  \cvtag{Node}
+  \cvtag{React}
+
+  \cvsection{Databases}
+  \cvtag{PostgreSQL}
+  \cvtag{Oracle}
+  \cvtag{SQLite}
+
+  \cvsection{DevOps}
+  \cvtag{Nix}
+  \cvtag{Docker}
+  \cvtag{OpenShift}
+
+  \cvsection{CI/CD}
+  \cvtag{Github Actions}
+  \cvtag{Jenkins}
+  \cvtag{Gitlab}
+
+  \cvsection{General Skills}
+
+  \cvtag{Distributed Systems}
+  \cvtag{Networking} \\
+  \cvtag{Full-stack development}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
 \cvsection{Experience}
 
-\cvevent{Senior Software Engineer}{Platonic.Systems}{November 2020 -- Present}{}
+\cvevent{Independent Contractor}{}{January 2024 -- Present}{\faGlobeAsia}
+
+\begin{itemize}
+  \item Improved outstanding issues in poorly understood Haskell voice analytics software:
+    \begin{itemize}
+      \item Added documentation, extensive test suites, and Github CI/CD.
+      \item Refactored code to remove difficult dependencies.
+      \item Designed, implemented, and demo-ed new features.
+      \item Fixed long-standing bugs.
+    \end{itemize}
+\end{itemize}
+
+\divider
+
+\cvevent{Senior Software Engineer}{Platonic.Systems}{November 2020 -- January 2024}{\faGlobeAmericas}
 
 \begin{itemize}
     \item Implemented "smart-contracts" with a high emphasis on correctness in Haskell, Nix, and PureScript.
@@ -136,7 +202,7 @@ I am a software engineer with 10 years of professional experience. I have been w
 
 \begin{itemize}
     \item Full-stack web development for the Electronic Immigration System (ELIS) application, used by United States Citizenship and Immigration (USCIS) officers for handling applicant case flows.
-    \item Technologies used included Java+Spring, Angular, React, Javascript, Typescript, Oracle/Postgres, Docker, OpenShift, and CI/CD via Jenkins.
+    \item Used Java+Spring, Angular, React, Javascript, Typescript, Oracle/Postgres, Docker, OpenShift, and CI/CD via Jenkins.
     \item Maintained a Red Hat Enterprise Linux virtual machine for testing.
     \item Participated in multiple "tiger teams" for developing cross-team solutions to shared problems.
     \item Managed daily production deployments on a semi-regular basis.
@@ -147,51 +213,16 @@ I am a software engineer with 10 years of professional experience. I have been w
 \cvevent{Software Engineer}{GBL Systems}{May 2013 -- February 2016}{NAS Pax River, Patuxent MD}
 \begin{itemize}
   \item Worked on the C++ real-time distributed simulation Next Generation Threat System (NGTS) for the United States Navy.
-  \item Worked on network protocols and integrating NGTS with third-party software. This included designing/implementing APIs and travelling to customer sites to provide support.
+  \item Worked on network protocols and integrating NGTS with third-party software. This included designing/implementing APIs and traveling to customer sites to provide support.
+  \item Designed GUIs using Qt C++ framework.
 \end{itemize}
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
 
 %% Yeah I didn't spend too much time making all the
 %% spacing consistent... sorry. Use \smallskip, \medskip,
 %% \bigskip, \vpsace etc to make ajustments.
 
-\cvsection{Education}
 
-\cvevent{B.Sc. in Computer Science}{University of Maryland, College Park}{2009 -- 2013}{}
-\begin{itemize}
-\item Minor: Astronomy
-\item College Park Scholars Graduate
-\end{itemize}
-
-\cvsection{Open Source}
-
-\begin{itemize}
-    \item I have contributed to opensource via my own applications / libraries and other popular libraries, especially in the Haskell community. This includes GHC, the primary Haskell compiler.
-    \item More information can be found on my \href{https://www.github.com/tbidne}{github} and \href{https://tbidne.github.io}{website}.
-\end{itemize}
-
-\cvsection{Skills}
-
-\cvtag{Distributed Systems}
-\cvtag{Networking} \\
-\cvtag{Full-stack development}
-\cvtag{Haskell}
-\cvtag{Java}
-\cvtag{JavaScript}
-\cvtag{Typescript}
-\cvtag{PureScript}
-\cvtag{Nix}
-\cvtag{Python}
-\cvtag{C++}
-\cvtag{Ruby}
-\cvtag{Docker}
-\cvtag{OpenShift}
 
 \end{paracol}
-
-\blfootnote{\textit{References available upon request}}
 
 \end{document}
