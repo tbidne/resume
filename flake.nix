@@ -16,7 +16,7 @@
             buildInputs = [ pkgs.texlive.combined.scheme-full ];
             installPhase = ''
               cd tex
-              ${pkgs.texlive.combined.scheme-full}/bin/pdflatex tbidne_resume.tex -halt-on-error
+              pdflatex tbidne_resume.tex -halt-on-error
               cd ../
 
               mkdir -p $out
@@ -36,7 +36,7 @@
               fmtShellApp = pkgs.writeShellApplication {
                 name = "format";
                 runtimeInputs = [ pkgs.nixpkgs-fmt ];
-                text = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt flake.nix";
+                text = "nixpkgs-fmt flake.nix";
               };
             in
             {
