@@ -21,7 +21,6 @@
 
               mkdir -p $out
               cp tex/tbidne_resume.pdf $out
-              echo $out
             '';
           };
 
