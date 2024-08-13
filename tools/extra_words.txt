@@ -1,0 +1,38 @@
+# TeX
+DarkPastelRed
+dvipsnames
+GoldenEarth
+headingrule
+Lato
+LightGray
+LightGrey
+PastelRed
+Roboto
+SlateGrey
+xcolor
+
+# Proper nouns
+Bidne
+BridgePhase
+ELIS
+GBL
+NAS
+NGTS
+Patuxent
+Pax
+tbidne
+USCIS
+
+# Tech
+APIs
+DevOps
+DevSecOps
+Github
+Gitlab
+GUIs
+Javascript
+OpenShift
+opensource
+Postgres
+PureScript
+TypeScript
